@@ -94,5 +94,8 @@ fromList [] = Empty
 fromList list=
   foldr insert Empty list
   
+isBinary :: XTree a -> Bool
+isBinary _ = True
+  
 
   
