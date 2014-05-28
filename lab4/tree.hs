@@ -1,6 +1,7 @@
 import Data.Char
+import Data.String
 
-data Tree a= Empty | Node a(Tree a) (Tree a) deriving (Eq, Ord, Read, Show)
+data Tree a= Empty | Node a(Tree a) (Tree a) deriving (Eq, Ord, Read)
 
 empty Empty = True 
 empty _ = False
@@ -94,12 +95,24 @@ fromList [] = Empty
 fromList list=
   foldr insert Empty list
   
-isBinary :: XTree a -> Bool
+isBinary :: Tree a -> Bool
 isBinary _ = True
 
--- lab4
+-- lab4 
 
 
+-- zadanie 1
+
+instance Show a => Show (Tree a) where
+  show Empty = "Empty"
+  show (Node v Empty Empty) = show v
+  show (Node v l r) = (show v) ++ "(" ++ (show l) ++ "),(" ++ (show r) ++ ")"
   
+  
+  
+-- zadanie 2
+  
+data STree a = Empty | Leaf a | Branch a (STree a) (STree a)
 
+convert (STr
   
