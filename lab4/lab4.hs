@@ -24,5 +24,8 @@ or'' list = foldr (||) False list
 reverse' list = foldl (flip (:)) [] list
 reverse'' list = foldr (\y ys-> ys ++ [y]) [] list
 
+head' (x:xs) = foldl((\x y -> x)) x (x:xs)
+head'' list = foldr (\x y -> x) 0 list
 
-
+tail' list = foldl(\x y -> y) 0 list
+tail'' list = foldr() 0 list

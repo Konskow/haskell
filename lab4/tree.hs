@@ -111,8 +111,14 @@ instance Show a => Show (Tree a) where
   
   
 -- zadanie 2
-  
-data STree a = Empty | Leaf a | Branch a (STree a) (STree a)
 
-convert (STr
+data STree a = Empty2 | Leaf a | Branch a (STree a) (STree a) deriving (Show)
+
+convertFrom Empty2 = Empty
+convertFrom (Leaf a) = (Node a Empty Empty)
+convertFrom (Branch v l r) = (Node v (convertFrom l) (convertFrom r))
+
+convertTo Empty = Empty2
+convertTo (Node v Empty Empty) = Leaf v
+convertTo (Node v l r) = (Branch v (convertTo l) (convertTo r))
   
