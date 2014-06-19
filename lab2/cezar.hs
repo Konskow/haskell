@@ -11,4 +11,4 @@ deszyfruj list x = [[ chr((ord y)-x) |  y<- wlist ] |  wlist <-list]
 is_word word = do
   contents <- readFile "slowa-utf8.txt"
   let wlist =  lines contents
-  print $ elem word wlist
+  print $ elem word wlistx
